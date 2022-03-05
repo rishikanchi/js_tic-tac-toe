@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <script src="script.js"></script>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body><center>
+    <h1 style="text-align: center;">Tic-Tac-Toe </h1> 
+    <div class="gameActions">
+        <div id="turn-winner">Turn: Circle</div> <br><br>
+        <div id="gameButtons">
+            <input type="button" id="playAgain" value="Play Again" disabled="true" onclick="playAgain()">
+        </div>
+    </div>
+    <div class="gameBoard">
+        <img class="slot" src="transparent.png" id="1" onclick="slotClick('1')" >
+        <img class="slot" src="transparent.png" id="2" onclick="slotClick('2')" >
+        <img class="slot" src="transparent.png" id="3" onclick="slotClick('3')" >
+        <img class="slot" src="transparent.png" id="4" onclick="slotClick('4')" >
+        <img class="slot" src="transparent.png" id="5" onclick="slotClick('5')" >
+        <img class="slot" src="transparent.png" id="6" onclick="slotClick('6')" >
+        <img class="slot" src="transparent.png" id="7" onclick="slotClick('7')" >
+        <img class="slot" src="transparent.png" id="8" onclick="slotClick('8')" >
+        <img class="slot" src="transparent.png" id="9" onclick="slotClick('9')" >
+    </div>
+</center></body>
+</html>

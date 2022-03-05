@@ -1,0 +1,26 @@
+*{
+    color: black;
+}
+
+body{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background: linear-gradient(to right, rgb(219, 138, 176), hsla(208, 90%, 88%, 1));
+}
+
+.gameBoard {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
+    grid-gap: none;
+    margin: 100px;
+}
+
+.slot{
+    height: 140px;
+    width: 140px;
+    justify-items: center;
+    border: 5px solid rgba(0, 0, 0, 0.75);
+
+}
