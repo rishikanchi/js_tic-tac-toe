@@ -3,6 +3,11 @@ var slotStatus = ["n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a"]
 var turn = "Circle";
 
 function slotClick(number){
+    if (slotStatus[number - 1] != "n/a"){
+        console.log("enterance")
+        console.log(slotStatus[number])
+    }
+    else {
         document.getElementById(number).src = turn + ".png";
         document.getElementById(number).onclick = "";
         slotStatus[number - 1] = turn;
@@ -20,18 +25,18 @@ function slotClick(number){
         }
 
         document.getElementById('turn-winner').innerHTML = "Turn: " + turn;
-
+    }
 }
 
 function checkForWins(turn){
-    for (i=0; i<8; i+=3){
+    for (var i=0; i<8; i+=3){
         if (slotStatus[i] == slotStatus[i+1] == slotStatus[i+2] == turn){
             endGame(turn);
             return;
         }
     }
     
-    for (i=0; i<3; i++){
+    for (var i=0; i<3; i++){
         if (slotStatus[i] == slotStatus[i+3] && slotStatus[i+6] == turn && slotStatus[i] == turn){
             endGame(turn);
             return;
@@ -65,31 +70,23 @@ function checkForWins(turn){
 
 function endGame(turn){
     document.getElementById('turn-winner').innerHTML = turn + " won!";
-    for (i=1; i<10; i++){
-        var index = String(i);
-        document.getElementById(index).onclick = "";
-    }
     document.getElementById('playAgain').disabled = false;
 }
 
 function drawGame(){
     document.getElementById('turn-winner').innerHTML = "Draw Game!";
-    for (i=1; i<10; i++){
-        var index = String(i);
-        document.getElementById(index).onclick = "";
-    }
     document.getElementById('playAgain').disabled = false;
 }
 
 function playAgain(){
-    for (i=1; i<10; i++){
-        document.getElementById(String(i)).src = "transparent.png";
-        document.getElementById(String(i)).onclick = slotClick(i);
+    for (var i=1; i<10; i++){
+        var number = String(i);
+        document.getElementById(number).src = "transparent.png";
     }
 
     slotStatus = ["n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a", "n/a"]
     turn = "Circle";
 
     document.getElementById("turn-winner").innerHTML = "Turn: Circle";
-
+    document.getElementById('playAgain').disabled = true;
 }
